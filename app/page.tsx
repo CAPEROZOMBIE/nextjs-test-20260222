@@ -1,53 +1,15 @@
-// page.tsx
+// app/page.tsx トップページ
 
 import styles from "./page.module.css"
 import Image from "next/image"
-// import  ButtonLink  from "./components/ButtonLink";
-// import type { NewsTs } from "./library/microcms";
-
 import NewsList_comp from "./components/NewsList";
 import ButtonComp from "./components/ButtonComp";
-
-// 5章追加
 import { getNewsList } from "./library/microcms";
 
-// const data: {contents: NewsTs[]} = {
-//     contents: [
-//         {
-//             id: "1",
-//             title: "渋谷ーーー",
-//             category: {
-//                 name: "更新",
-//             },
-//             publishedAt: "2026/02/22",
-//             createdAt: "2026/02/25",
-//         },
-//         {
-//             id: '2',
-//             title: '当社CEOが業界リーダーTOP30に選出されました',
-//             category: {
-//                 name: '更新情報',
-//             },
-//             publishedAt: '2023/05/19',
-//             createdAt: '2023/05/19',
-//         },
-//         {
-//             id: '3',
-//             title: 'テストの記事です',
-//             category: {
-//                 name: '更新情報',
-//             },
-//             publishedAt: '2023/04/19',
-//             createdAt: '2023/04/19',
-//         },
-//     ]
-// }
+export const revalidate = 60 // 追加　0222
 
 export default async function Home() {
-   //  const sliceData = data.contents.slice(0,3);
-
    const yamata_data = await getNewsList({limit:5})
-
     return (
         <>
             <section className={styles.stop}>
