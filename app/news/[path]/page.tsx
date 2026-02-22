@@ -6,9 +6,10 @@ import Date_comp from "@/app/components/Date"
 import Category_comp from "@/app/components/Category"
 import Image from "next/image"
 import ButtonComp from "@/app/components/ButtonComp"
-
 import { notFound } from "next/navigation"
 import Link from "next/link"
+
+export const revalidate = 0 //　追加
 
 type alltype = { 
    params: Promise<{ path: string; }>

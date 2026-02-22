@@ -6,6 +6,8 @@ import NewsList_comp from "../components/NewsList";
 import { Pagination } from "../components/Pagination";
 import { SearchBox }  from "@/app/components/SearchBox";
 
+export const revalidate = 0 //　追加
+
 export async function Page() {
    const Yamata_data = await getNewsList({limit:5}); 
    return(
