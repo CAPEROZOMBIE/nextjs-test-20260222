@@ -107,25 +107,6 @@ export const getNewsList = async (queries?: MicroCMSQueries) => {
 
 }
 
-
-// 詳細ページの型
-
-// const getNewsDetail = async ( 
-//    contentId:string, 
-//    queries?:MicroCMSQueries
-// ) => 
-//    {
-//       const detailData = await client.getListDetail<NewsTs>({
-//          endpoint: "news",
-//          contentId,
-//          queries,
-//       })
-//       return detailData
-// }
-
-// export { getNewsDetail }
-
-
 // カテゴリーページで使う型
 
 const getCategoryDetail0219 = async (
@@ -153,7 +134,12 @@ const getNewsDetail = async (
    const detailData = await client.getListDetail<NewsTs>({
       endpoint:"news",
       contentId,
-      queries
+      queries,
+      customRequestInit:{
+         next:{
+            revalidate:queries?.draftKey === undefined ? 60 : 0,
+         }
+      }
    })
    return detailData
 }
