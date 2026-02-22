@@ -9,7 +9,7 @@ import ButtonComp from "@/app/components/ButtonComp"
 import { notFound } from "next/navigation"
 import Link from "next/link"
 
-export const revalidate = 0 //　追加
+export const revalidate = 60 //　追加
 
 type alltype = { 
    params: Promise<{ path: string; }>
