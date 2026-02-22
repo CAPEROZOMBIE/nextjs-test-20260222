@@ -1,0 +1,71 @@
+/* // menu04.module.css */
+
+
+/* PC版 */
+@media (min-width: 768px) {
+   .button {
+      display: none;
+   }
+
+   .ul {
+      display: flex;
+   }
+}
+
+
+/* スマホ版 */
+@media (max-width: 767px) {
+
+   .close .button {
+      color: aqua;
+   }
+
+   .open .button {
+      color: pink;
+   }
+
+   .button {
+      position: fixed;
+      z-index: 200;
+      width: 50px;
+      right: 50px;
+   }
+
+   /* メニュー（オーバーレイ） */
+   .list {
+      position: fixed;
+      top: 0;
+      right: 0%;
+      bottom: 0;
+      left: 0%;
+      z-index: 100;
+      background: rgba(0, 0, 0, 0.8);
+      color: var(--white);
+      /* transition: transform 0.4s; */
+      color: orange;
+      font-weight: bold;
+      background-color: antiquewhite;
+      /* display: none; */
+      opacity: 0;
+      filter: blur(5px);
+      transition: filter 0.2s, opacity 0.2s;
+   }
+
+   .open .list {
+
+      /* listのスライド */
+      /* transform: translateX(-100%); */
+      opacity: 1;
+      filter: blur(0px);
+
+   }
+
+   /* メニュー（オーバーレイ内の配置） */
+   .list {
+      display: grid;
+      gap: 40px;
+      place-content: center;
+      text-align: center;
+   }
+
+}

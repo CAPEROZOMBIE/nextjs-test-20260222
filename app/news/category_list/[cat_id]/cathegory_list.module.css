@@ -1,0 +1,44 @@
+.footer {
+  /* display: flex;
+  justify-content: flex-end; */
+  border-top: 1px solid var(--color-border);
+  border-bottom: 1px solid var(--color-border);
+  margin-top: 0px;
+  padding-top: 30px;
+  padding-bottom: 40px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+/* sheetのcssから */
+.container {
+  position: relative;
+  background-color: #fff;
+  width: 840px;
+  margin: -40px auto 0;
+  padding: 80px;
+  border-radius: 8px;
+}
+
+@media (max-width: 920px) {
+  .container {
+    width: calc(100% - 80px);
+  }
+}
+
+@media (max-width: 640px) {
+  .container {
+    width: calc(100% - 32px);
+    padding: 40px 16px;
+  }
+}
+
+
+/* 追加俺0219 */
+
+.midashi {
+   font-size: 1.3rem;
+   color: blue;
+   font-weight: bold;
+   padding-bottom: 10px;
+}

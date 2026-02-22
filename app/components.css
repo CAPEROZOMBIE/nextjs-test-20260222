@@ -1,0 +1,36 @@
+/* components.css */
+/* 
+.date {
+    display: flex;
+    gap:5px;
+    align-items: center;
+}
+
+/* ボタン */
+
+.bt {
+  position: absolute;
+  right: 30px;
+  bottom: -40px;
+
+}
+
+/* button {
+   padding: 15px;
+   border: none;
+   margin: 0 auto;
+   width: 200px;
+} */
+
+
+.bt {
+  display: block;
+  padding: 10px 20px;
+  border-radius: 5px;
+  width: 180px;
+  /* background: url('/arrow-right.svg') no-repeat right 20px center; */
+  background-color: green;
+  color: white;
+  font-size: 1rem;
+  border: none;
+} */
