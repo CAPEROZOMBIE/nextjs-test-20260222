@@ -8,6 +8,7 @@ import Image from "next/image"
 import ButtonComp from "@/app/components/ButtonComp"
 import { notFound } from "next/navigation"
 import Link from "next/link"
+import { Metadata } from "next"
 
 // export const revalidate = 60 //　追加
 
@@ -15,6 +16,49 @@ type alltype = {
    params: Promise<{ path: string; }>
    searchParams:Promise<{dk?:string;}> // 追加
 }
+
+// meta情報
+// export async function generateMetadata({
+//     params, searchParams }:alltype):Promise<Metadata>{
+//       const data = await getNewsDetail(params.slug,{
+//          draftKey:searchParams.dk,
+//       });
+
+//       return{
+//          title:data.title,
+//          description:data.description,
+//          openGraph:{
+//             title:data.title,
+//             description:data.description,
+//             images:[data?.thumbnail?.url ?? ""],
+//          }
+//       }
+//     }
+
+
+// Meta情報改訂GPT
+export async function generateMetadata(
+  { params, searchParams }: alltype
+): Promise<Metadata> {
+
+  const { path } = await params
+  const { dk } = await searchParams
+
+  const data = await getNewsDetail(path, {
+    draftKey: dk,
+  })
+
+  return {
+    title: data.title,
+    description: data.description,
+    openGraph: {
+      title: data.title,
+      description: data.description,
+      images: [data?.thumbnail?.url ?? ""],
+    },
+  }
+}
+
 
 async function Page({ params,searchParams }: alltype) {
    const { path } = await params

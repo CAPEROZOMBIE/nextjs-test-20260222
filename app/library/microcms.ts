@@ -169,7 +169,23 @@ export { getCategoryDetail0220 }
 
 
 
+// 10章で追加。。。
 
+export const getAllNewsList = async () => {
+  const listData = await client.getAllContents<NewsTs>({
+    endpoint: 'news',
+  });
+
+  return listData;
+};
+
+export const getAllCategoryList = async () => {
+  const listData = await client.getAllContents<CategoryTs>({
+    endpoint: 'categories',
+  });
+
+  return listData;
+};
 
 
 

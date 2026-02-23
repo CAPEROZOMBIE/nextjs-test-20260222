@@ -27,6 +27,7 @@ const NewsList_comp = ({ newsprops }: alltype) => {
                               className={styles.image}
                               width={article.thumbnail.width}
                               height={article.thumbnail.height}
+                              sizes="200px"
                            />
                         ) : (
                            <Image
@@ -34,14 +35,14 @@ const NewsList_comp = ({ newsprops }: alltype) => {
                               src="/no-image.png"
                               alt=""
                               width={1200}
-                          
-                          
                               height={630}
                            />
                         )}
 
                         <dl className={styles.content}>
-                            <Link href={`/news/${article.id}`} className={styles.link}> <dt className={styles.newsItemtitle}>{article.title}</dt></Link>
+                           <dt className={styles.newsItemtitle}>
+                              <Link href={`/news/${article.id}`} className={styles.link}>{article.title}ああ</Link>
+                           </dt>
                            <dd className={styles.meta}>
 
                               {/* カテゴリーへのリンク */}
